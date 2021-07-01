@@ -163,7 +163,7 @@
       <visual>
         <origin xyz="0 0 0.001" rpy="0 ${radians(-90.0)} ${radians(180.0)}" />
         <geometry>
-          <mesh filename="package://gripper_2/meshes/base_link.STL" />
+          <mesh filename="package://spindle/meshes/base_link.STL" />
         </geometry>
         <material name="">
           <color
@@ -174,7 +174,7 @@
         <origin xyz="0 0 0.005" rpy="0 ${radians(-90.0)} ${radians(180.0)}" />
         <geometry>
           <mesh
-            filename="package://gripper_2/meshes/base_link.STL" />
+            filename="package://spindle/meshes/base_link.STL" />
         </geometry>
       </collision>
       <inertial>
