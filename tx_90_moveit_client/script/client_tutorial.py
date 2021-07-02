@@ -129,13 +129,13 @@ class StaubliScanning(object):
 		## We can plan a motion for this group to a desired pose for the
 		## end-effector:
 		pose_goal = geometry_msgs.msg.Pose()
-		pose_goal.position.x = 0.78416
-		pose_goal.position.y = 0.120746
-		pose_goal.position.z = 0.926026
-		pose_goal.orientation.x = -0.1610288
-		pose_goal.orientation.y = 0.6605529
-		pose_goal.orientation.z = 0.2046482
-		pose_goal.orientation.w = 0.7041723
+		pose_goal.position.x = 0.784
+		pose_goal.position.y = 0.21
+		pose_goal.position.z = 0.926
+		pose_goal.orientation.x = -0.353553
+		pose_goal.orientation.y = 0.6123724
+		pose_goal.orientation.z = 0.35355339
+		pose_goal.orientation.w = 0.61237
 		
 		move_group.set_pose_target(pose_goal)
 
@@ -183,9 +183,9 @@ class StaubliScanning(object):
 		# wpose.position.x += scale * 0.1  # Second move forward/backwards in (x)
 		# waypoints.append(copy.deepcopy(wpose))
 		for i in range(15):
-			#wpose.position.x += scale * 0.1 
+			wpose.position.x += scale * 0.01 
 			#wpose.position.z += scale * 0.1 
-			wpose.position.z += scale * 0.02
+			# wpose.position.z += scale * 0.02
 			waypoints.append(copy.deepcopy(wpose))
 			print("waypoints ", waypoints[i])
 
@@ -227,13 +227,13 @@ if __name__ == '__main__':
 	staubli_client = StaubliScanning()
 	######
 
-	staubli_client.go_to_joint_state()
-	# cartesian_plan, fraction = staubli_client.plan_cartesian_path()
-	# staubli_client.display_trajectory(cartesian_plan)
+	# staubli_client.go_to_joint_state()
+	#cartesian_plan, fraction = staubli_client.plan_cartesian_path()
+	#staubli_client.display_trajectory(cartesian_plan)
 	# staubli_client.execute_plan(cartesian_plan)
 	
 	#######
 
-	# staubli_client.go_to_pose_goal()
-	# staubli_client.find_curr_pose()
+	#staubli_client.go_to_pose_goal()
+	staubli_client.find_curr_pose()
 	#main()
